@@ -1,0 +1,5 @@
+SillyTavern/
+bridge/
+*.log
+__pycache__/
+node_modules/
