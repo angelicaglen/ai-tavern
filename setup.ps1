@@ -22,7 +22,8 @@ Set-Location "$PSScriptRoot\SillyTavern"
 npm install
 
 Set-Location "$PSScriptRoot\bridge"
-python3.13.exe -m venv .venv
+$pythonCmd = if (Get-Command python3 -ErrorAction SilentlyContinue) { "python3" } else { "python" }
+& $pythonCmd -m venv .venv
 .\.venv\Scripts\python.exe -m pip install flask flask-cors
 
 Write-Host "[4/4] Configuring SillyTavern..." -ForegroundColor Yellow
