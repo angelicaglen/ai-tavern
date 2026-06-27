@@ -2,7 +2,7 @@ $ErrorActionPreference = "Stop"
 Set-Location $PSScriptRoot
 
 Write-Host "Starting bridge..." -ForegroundColor Cyan
-$bridge = Start-Process -FilePath "python" -ArgumentList "claude_bridge.py" -WorkingDirectory "$PSScriptRoot\bridge" -PassThru -WindowStyle Minimized
+$bridge = Start-Process -FilePath "$PSScriptRoot\bridge\.venv\Scripts\python.exe" -ArgumentList "claude_bridge.py" -WorkingDirectory "$PSScriptRoot\bridge" -PassThru -WindowStyle Minimized
 
 Start-Sleep -Seconds 2
 
